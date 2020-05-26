@@ -33,9 +33,32 @@ h1 {
   font-size: 50px;
 } 
 
+h2 {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+h4 {
+  font-size: 25px;
+  font-weight: bolder;
+  color: goldenrod;
+}
+
+.victory {
+  color: green;
+}
+
+.defeat {
+  color: red;
+}
+
 .winner {
   color: green;
   border: 10px solid green;
+}
+
+.tie {
+  color: black;
 }
 
 .loser {
@@ -55,6 +78,14 @@ h1 {
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
+}
+
+#nameBox {
+  border: none;
+  margin-top: 30px;
+  padding: 10px;
+  height: 40px;
+  border-radius: 5px;
 }
 
 button {
