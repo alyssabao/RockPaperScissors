@@ -25,31 +25,23 @@ function App() {
   const [gameHistory, setGameHistory] = useState([]);
   const [previousWinner, setPreviousWinner] = useState(null);
   const onplay = (userChoice) => {
+    setUserC(choices[userChoice])
     let itemArray = Object.keys(choices)
     let randomNum = Math.floor(Math.random() * itemArray.length)
     let itemName = itemArray[randomNum]
-
-    judgment(choices[userChoice],choices[itemName])
-    
-    setUserC(choices[userChoice])
     setComputerC(choices[itemName])
-    gameHistory.push(result);
-    setGameHistory(gameHistory)
-  }
-
-  const judgment = (user,computer) => {
-    if (user.name === "rock") {
-      result = computer.name === "scissors" ? "Victory!" : "Defeat!";
+    if (userC.name === "rock") {
+      result = computerC.name === "scissors" ? "Victory!" : "Defeat!";
     }
-    if (user.name === "paper") {
-      result = computer.name === "rock" ? "Victory!" : "Defeat!";
+    if (userC.name === "paper") {
+      result = computerC.name === "rock" ? "Victory!" : "Defeat!";
     }
-    if (user.name === "scissors") {
-      result = computer.name === "paper" ? "Victory!" : "Defeat!";
+    if (userC.name === "scissors") {
+      result = computerC.name === "paper" ? "Victory!" : "Defeat!";
     }
 
-    if (user.name === computer.name) result = "Tie game!";
-    console.log(user.name, computer.name, result)
+    if (userC.name === computerC.name) result = "Tie game!";
+    console.log(userC.name, computerC.name, result)
     if (result === "Victory!") {
       setPreviousWinner("You");
     } else if (result === "Defeat!") {
@@ -57,7 +49,8 @@ function App() {
     } else {
       setPreviousWinner("Tie");
     }
-
+    gameHistory.push(result);
+    setGameHistory(gameHistory)
   }
   return (
     <div className="App">
